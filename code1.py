@@ -20,3 +20,6 @@ time.sleep(2)
 
 print("hello Orkut")
 time.sleep(2)
+
+print("hello Orkut")
+time.sleep(2)
