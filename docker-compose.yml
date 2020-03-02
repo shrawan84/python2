@@ -1,0 +1,6 @@
+version: '3.7'
+services:
+ my-image:
+  image: shrawan84/pybug:v1
+  build: .
+  container_name: pyone
