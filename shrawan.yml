@@ -54,4 +54,4 @@ spec:
     app: shrawan1
   type: NodePort
 status:
-loadBalancer: {}
+  loadBalancer: {}
