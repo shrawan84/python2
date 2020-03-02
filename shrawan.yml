@@ -1,0 +1,57 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  creationTimestamp: null
+  name: shrawan
+spec: {}
+status: {}
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: shrawan1
+  name: shrawan1
+  namespace: shrawan
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: shrawan1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: shrawan1
+    spec:
+      containers:
+      - image: dockerashu/ashuwebadhocapp:v1
+        name: ashuwebadhocapp
+        resources: {}
+        imagePullPolicy: Always
+status: {}
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: ashusvc
+  name: ashusvc
+  namespace: shrawan
+spec:
+  ports:
+  - name: "80"
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: shrawan1
+  type: NodePort
+status:
+loadBalancer: {}
